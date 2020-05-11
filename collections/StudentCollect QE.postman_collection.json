@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "9828742b-8266-4c09-8553-13deca51f081",
+		"name": "StudentCollect QE",
+		"description": "Get\nPost\nPut\nPatch\nHead\nOption\nDelete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "First",
+			"item": [
+				{
+					"name": "Get all students",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1560dbe6-8166-474e-8954-0a61d45400aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{myUrl}}/student/list",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get individual",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "540241c1-c945-4116-829d-5c776966d4b4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{myUrl}}/student/101",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Head info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3d44cbf-fd34-4248-915b-87914138477f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "{{myUrl}}/student/100",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Second",
+			"item": [
+				{
+					"name": "Update Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0937c358-d744-4c6e-b143-62fec0ea9e15",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sourav\",\r\n    \"lastName\": \"Dey\",\r\n    \"email\": \"Saurab.dey@google.com\",\r\n    \"programme\": \"Financial Analysis\",\r\n    \"courses\": [\r\n        \"Accounting\",\r\n        \"Machine Learning\"\r\n    ]\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{myUrl}}/student/101",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Email of Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "018cd317-c237-4e1d-9af1-8ff38fa49183",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saurab.class@hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{myUrl}}/student/101",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Stundent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0ea150ce-c513-4995-acb4-c583f01c349e",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{myUrl}}/student/101",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check all options",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b1774ddd-c18d-49a8-bb99-a14b84c9b2db",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "{{myUrl}}/student",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Third",
+			"item": [
+				{
+					"name": "Create Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0308f28-2f25-4654-9bf6-f011e22b9a64",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"{{firstname}}\",\r\n    \"lastName\": \"{{lastname}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"programme\": \"{{prog}}\",\r\n    \"courses\": [\r\n        \"Accounting\",\r\n        \"Statistics\"\r\n    ]\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{myUrl}}/student",
+							"host": [
+								"{{myUrl}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
